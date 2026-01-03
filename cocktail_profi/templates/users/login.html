@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    
+    <div class="card shadow-sm mt-5">
+      <div class="card-body p-4">
+        <h3 class="card-title text-center mb-4">Вход на сайт</h3>
+
+        {% if form.errors %}
+            <div class="alert alert-danger text-center">
+                Неверное имя пользователя или пароль.
+            </div>
+        {% endif %}
+
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label class="form-label">Имя пользователя</label>
+            <input type="text" name="username" class="form-control" required id="id_username">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Пароль</label>
+            <input type="password" name="password" class="form-control" required id="id_password">
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary">Войти</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="card-footer text-center bg-white border-0 pb-3">
+        Нет аккаунта? <a href="{% url 'users:signup' %}" class="text-decoration-none">Зарегистрироваться</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
