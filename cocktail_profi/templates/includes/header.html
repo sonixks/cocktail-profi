@@ -11,14 +11,14 @@
       </ul>
       <div class="text-end">
         {% if user.is_authenticated %}
-            <span class="me-3 text-muted">Привет, <b>{{ user.username }}</b>!</span>
-            <form action="{% url 'users:logout' %}" method="post" class="d-inline">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-outline-danger btn-sm">Выход</button>
-            </form>
+          <span class="me-3 text-muted">Привет, <b>{{ user.username }}</b>!</span>
+          <form action="{% url 'users:logout' %}" method="post" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger btn-sm">Выход</button>
+          </form>
         {% else %}
-            <a href="{% url 'users:login' %}" class="btn btn-outline-primary me-2">Вход</a>
-            <a href="{% url 'users:signup' %}" class="btn btn-primary">Регистрация</a>
+          <a href="{% url 'users:login' %}" class="btn btn-outline-primary me-2">Вход</a>
+          <a href="{% url 'users:signup' %}" class="btn btn-primary">Регистрация</a>
         {% endif %}
       </div>
     </div>
