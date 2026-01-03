@@ -6,7 +6,9 @@ SECRET_KEY = 'django-insecure-wlrouc_vthf%_^_x%5#wb3!(f%7(7c!ex^6nj9qe5fzm5#r7k6
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,6 +22,7 @@ INSTALLED_APPS = [
     'catalog.apps.CatalogConfig',
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -30,7 +33,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+INTERNAL_IPS = ['127.0.0.1']
 
 ROOT_URLCONF = 'cocktail_profi.urls'
 
@@ -81,8 +87,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATIC_DIRS = [
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]

@@ -1,0 +1,18 @@
+<header class="p-3 bg-white border-bottom shadow-sm">
+  <div class="container">
+    <div class="d-flex justify-content-lg-start align-items-center">
+      <a href="{% url 'catalog:home' %}" class="text-dark text-decoration-none me-4">
+        <span class="fs-4 fw-bold">🍸 Cocktail Profi</span>
+      </a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'catalog:home' %}" class="nav-link px-2 link-secondary">Каталог</a></li>
+        <li><a href="{% url 'catalog:categories_list' %}" class="nav-link px-2 link-dark">Категории</a></li>
+        <li><a href="#" class="nav-link px-2 link-dark">Мой бар</a></li>
+      </ul>
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-primary me-2">Вход</button>
+        <button type="button" class="btn btn-primary">Регистрация</button>
+      </div>
+    </div>
+  </div>
+</header>

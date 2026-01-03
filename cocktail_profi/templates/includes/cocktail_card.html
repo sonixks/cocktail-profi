@@ -1,0 +1,12 @@
+<div class="card" style="width: 20rem;">
+  <img src="{{ cocktail.image_url }}" class="card-img-top" alt="{{ cocktail.name }}">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">
+        <a href="{% url 'catalog:category_cocktails' cocktail.category.id %}" class="text-decoration-none text-reset">
+            {{ cocktail.category.name_ru }}
+        </a>
+    </h6>
+    <h5 class="card-title">{{ cocktail.name }}</h5>
+    <a href="{% url 'catalog:cocktail_detail' cocktail.id %}" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>

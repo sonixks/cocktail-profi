@@ -1,12 +1,20 @@
 from django.db import models
 
 
+class MeasurementUnit(models.Model):
+    name_en = models.CharField(max_length=50, unique=True, verbose_name="Ед. изм. (EN)")
+    name_ru = models.CharField(max_length=50, verbose_name="Ед. изм. (RU)")
+
+    def __str__(self):
+        return f"{self.name_en} -> {self.name_ru}"
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     name_ru = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name_ru
+        return self.name
 
 
 class Ingredient(models.Model):
@@ -14,7 +22,7 @@ class Ingredient(models.Model):
     name_ru = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name_ru
+        return self.name
 
 
 class Cocktail(models.Model):
@@ -28,8 +36,11 @@ class Cocktail(models.Model):
     image_url = models.URLField(blank=True, null=True)
     external_id = models.CharField(max_length=50, unique=True)
 
+    class Meta:
+        ordering = ('-id',)
+
     def __str__(self):
-        return self.name_ru
+        return self.name
 
 
 class CocktailIngredient(models.Model):
