@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from catalog.models import Category, Cocktail, Ingredient, CocktailIngredient, MeasurementUnit
+from catalog.models import Category, Cocktail, Ingredient, MeasurementUnit
 
 
 class CategoryAdmin(admin.ModelAdmin):

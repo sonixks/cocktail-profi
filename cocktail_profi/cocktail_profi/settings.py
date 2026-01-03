@@ -20,7 +20,6 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'bar.apps.BarConfig',
     'catalog.apps.CatalogConfig',
-    'core.apps.CoreConfig',
     'users.apps.UsersConfig',
     'debug_toolbar'
 ]
