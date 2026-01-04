@@ -6,7 +6,15 @@ app_name = 'catalog'
 
 urlpatterns = [
     path('', views.cocktails_list, name='home'),
-    path('cocktail/<int:cocktail_id>/', views.cocktail_detail, name='cocktail_detail'),
+    path(
+        'cocktail/<int:cocktail_id>/',
+        views.cocktail_detail,
+        name='cocktail_detail'
+    ),
     path('category/', views.categories_list, name='categories_list'),
-    path('category/<int:category_id>/', views.cocktails_by_category, name='category_cocktails'),
+    path(
+        'category/<int:category_id>/',
+        views.cocktails_by_category,
+        name='category_cocktails'
+    ),
 ]

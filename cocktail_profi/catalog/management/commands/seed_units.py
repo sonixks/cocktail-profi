@@ -1,15 +1,15 @@
 from django.core.management.base import BaseCommand
 from catalog.models import MeasurementUnit
 
+
 class Command(BaseCommand):
     help = 'Наполняет базу единицами измерения'
 
     def handle(self, *args, **kwargs):
-        # Словарь: Английский -> Русский
         units = {
             'oz': 'унц.',
             'ounce': 'унц.',
-            'cl': 'cl', # Иногда оставляют так, или 'сл'
+            'cl': 'cl',
             'ml': 'мл',
             'tsp': 'ч.л.',
             'tbsp': 'ст.л.',

@@ -2,7 +2,7 @@ import random
 
 from django.shortcuts import get_object_or_404, render
 
-from catalog.models import Category, Cocktail, CocktailIngredient
+from catalog.models import Category, Cocktail
 
 
 def get_published_cocktails():

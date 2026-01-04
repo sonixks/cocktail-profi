@@ -1,18 +1,15 @@
-Package              Version
--------------------- ----------
-asgiref              3.11.0
-beautifulsoup4       4.14.3
-certifi              2025.11.12
-charset-normalizer   3.4.4
-deep-translator      1.11.4
-Django               6.0
-django-bootstrap5    25.3
-django-debug-toolbar 6.1.0
-idna                 3.11
-pip                  25.3
-requests             2.32.5
-soupsieve            2.8.1
-sqlparse             0.5.5
-typing_extensions    4.15.0
-tzdata               2025.3
-urllib3              2.6.2
+asgiref==3.11.0
+beautifulsoup4==4.14.3
+certifi==2025.11.12
+charset-normalizer==3.4.4
+deep-translator==1.11.4
+Django==6.0
+django-bootstrap5==25.3
+django-debug-toolbar==6.1.0
+idna==3.11
+requests==2.32.5
+soupsieve==2.8.1
+sqlparse==0.5.5
+typing_extensions==4.15.0
+tzdata==2025.3
+urllib3==2.6.2

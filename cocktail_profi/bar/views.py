@@ -84,7 +84,8 @@ def cocktail_match_view(request):
             is_found = False
 
             for user_ing in user_items:
-                if recipe_ing == user_ing or recipe_ing in user_ing or user_ing in recipe_ing:
+                if (recipe_ing == user_ing or recipe_ing in user_ing
+                        or user_ing in recipe_ing):
                     is_found = True
                     break
 
@@ -94,7 +95,7 @@ def cocktail_match_view(request):
                 missing_count += 1
         if missing_count == 0:
             matches.append(cocktail)
-        elif missing_count <= 2 and found_count > 0: 
+        elif missing_count <= 2 and found_count > 0:
             almost_matches.append(cocktail)
 
     context = {
