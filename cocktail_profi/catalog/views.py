@@ -1,6 +1,7 @@
 import random
 
-from django.shortcuts import get_object_or_404, render
+from django.db.models import Q
+from django.shortcuts import get_object_or_404, render, redirect
 
 from catalog.models import Category, Cocktail
 
@@ -22,7 +23,17 @@ def get_random_cocktails(cocktails_list, cocktails_number):
 def cocktails_list(request):
     template = 'catalog/cocktails_list.html'
     cocktails_list = get_published_cocktails()
-    cocktails = get_random_cocktails(cocktails_list, 24)
+    if request.GET:
+        sub_string = request.GET.get('search_query')
+        if sub_string is not None and not sub_string.strip():
+            return redirect('catalog:home')
+        cocktails = cocktails_list.filter(
+            Q(name__icontains=sub_string) |
+            Q(name_ru__icontains=sub_string) |
+            Q(name_ru__icontains=sub_string.capitalize())
+        )
+    else:
+        cocktails = get_random_cocktails(cocktails_list, 24)
     context = {
         'cocktails_list': cocktails
     }

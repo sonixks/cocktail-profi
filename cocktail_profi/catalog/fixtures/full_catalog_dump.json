@@ -220,7 +220,7 @@
   "pk": 5,
   "fields": {
     "name": "Shake",
-    "name_ru": "Встряхнуть"
+    "name_ru": "Шейк"
   }
 },
 {
@@ -244,7 +244,7 @@
   "pk": 8,
   "fields": {
     "name": "Coffee / Tea",
-    "name_ru": "Кофе/Чай"
+    "name_ru": "Кофе / Чай"
   }
 },
 {

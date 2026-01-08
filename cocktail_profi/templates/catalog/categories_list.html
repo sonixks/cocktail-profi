@@ -5,7 +5,7 @@
   <div class="list-group">
     {% for category in categories %}
       <a href="{% url 'catalog:category_cocktails' category.id %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        {{ category.name }}
+        {{ category.name_ru }}
         <span class="badge bg-primary rounded-pill">
           {{ category.cocktail_set.count }}
         </span>

@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Каталог коктейлей{% endblock title %}
 {% block content %}
+{% if request.resolver_match.url_name == 'home' %}
+  <div class="mb-3">
+    {% include "includes/search.html" %}
+  </div>
+{% endif %}
 <div class="row">
   {% for cocktail in cocktails_list%}
-  <div class="col-7 col-md-3 mb-3">
+  <div class="col-md-3 mb-3">
     {% include 'includes/cocktail_card.html' %}
   </div>
   {% endfor %}
