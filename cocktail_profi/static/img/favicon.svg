@@ -1,8 +1,0 @@
-<svg width="201" height="202" viewBox="0 0 201 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="67" cy="36.5" rx="25" ry="23.5" fill="#EACA12"/>
-<ellipse cx="67" cy="36.5" rx="20" ry="18.5" fill="#F6ECB3"/>
-<path d="M100.5 150L13.4644 37.5L187.536 37.5L100.5 150Z" fill="black"/>
-<line x1="101" y1="201" x2="101" y2="65" stroke="black" stroke-width="8"/>
-<line x1="140" y1="198" x2="61" y2="198" stroke="black" stroke-width="8"/>
-<line y1="-4" x2="51.8971" y2="-4" transform="matrix(0.500991 -0.865452 0.892389 0.451267 132 53.3262)" stroke="black" stroke-width="8"/>
-</svg>
