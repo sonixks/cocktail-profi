@@ -17,4 +17,10 @@ urlpatterns = [
         views.cocktails_by_category,
         name='category_cocktails'
     ),
+    path(
+        'toggle_like_cocktail/<int:cocktail_id>/',
+        views.toggle_like_cocktail,
+        name='toggle_like_cocktail'
+    ),
+    path('favorite_cocktails/', views.favorite_cocktails, name='favorite')
 ]

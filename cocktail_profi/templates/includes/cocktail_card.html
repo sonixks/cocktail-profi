@@ -8,5 +8,15 @@
     </h6>
     <h5 class="card-title">{{ cocktail.name }}</h5>
     <a href="{% url 'catalog:cocktail_detail' cocktail.id %}" class="btn btn-primary">Подробнее</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'catalog:toggle_like_cocktail' cocktail.id %}" 
+        class="btn {% if cocktail.id in favorite_cocktails %}btn-danger{% else %}btn-outline-danger{% endif %} text-nowrap">
+        {% if cocktail.id in favorite_cocktails %}
+          В избранном
+        {% else %}
+          В избранное
+        {% endif %}
+      </a>
+    {% endif %}
   </div>
 </div>

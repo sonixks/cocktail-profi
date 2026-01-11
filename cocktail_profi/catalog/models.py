@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class MeasurementUnit(models.Model):
@@ -65,3 +66,16 @@ class CocktailIngredient(models.Model):
     cocktail = models.ForeignKey(Cocktail, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     amount = models.CharField(max_length=100, blank=True, null=True)
+
+
+class Favourite(models.Model):
+    User = get_user_model()
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='favorites'
+    )
+    cocktail = models.ForeignKey(Cocktail, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'cocktail')

@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from bar.models import UserStock
 from catalog.models import Cocktail, Ingredient
+from catalog.views import get_favotite_cocktails
 
 
 @login_required
@@ -98,8 +99,10 @@ def cocktail_match_view(request):
         elif missing_count <= 2 and found_count > 0:
             almost_matches.append(cocktail)
 
+    favorite_cocktails = get_favotite_cocktails(request)
     context = {
         'matches': matches,
         'almost_matches': almost_matches,
+        'favorite_cocktails': favorite_cocktails
     }
     return render(request, 'bar/match.html', context)

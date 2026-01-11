@@ -19,4 +19,4 @@ class UserStock(models.Model):
     )
 
     class Meta:
-        unique_together = (('user', 'ingredient'),)
+        unique_together = ('user', 'ingredient')

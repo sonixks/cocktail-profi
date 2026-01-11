@@ -5,9 +5,10 @@
         <span class="fs-4 fw-bold">🍸 Cocktail Profi</span>
       </a>
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="{% url 'catalog:home' %}" class="nav-link px-2 link-secondary">Главная</a></li>
+        <li><a href="{% url 'catalog:home' %}" class="nav-link px-2 link-dark">Главная</a></li>
         <li><a href="{% url 'catalog:categories_list' %}" class="nav-link px-2 link-dark">Категории</a></li>
         <li><a href="{% url 'bar:index' %}" class="nav-link px-2 link-dark">Мой бар</a></li>
+        <li><a href="{% url 'catalog:favorite' %}" class="nav-link px-2 link-dark">Избранное</a></li>
       </ul>
       <div class="text-end">
         {% if user.is_authenticated %}
