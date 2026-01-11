@@ -47,9 +47,18 @@
    ```bash
    python manage.py migrate
    ```
-5. **Запустите сервер:**
+5. **Установите фикстуры:**
+   ```bash
+   python manage.py loaddata catalog/fixtures/full_catalog_dump.json
+   ```
+6. **Создайте .env в директории coctail_profi:**
+   ```python
+   SECRET_KEY='вставьте_свой_ключ'
+   DEBUG=False
+   ```
+7. **Запустите сервер:**
    ```bash
    python manage.py runserver
    ```
-6. **Откройте проект в браузере:**
+8. **Откройте проект в браузере:**
    Перейдите по ссылке: http://127.0.0.1:8000/
